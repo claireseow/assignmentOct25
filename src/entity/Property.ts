@@ -2,6 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, ManyToMan
 import { Booking } from "./Booking";
 import { Owner } from "./Owner";
 import { Tags } from "./Tags";
+import { Review } from "./Review";
 
 @Entity()
 export class Property {
@@ -33,5 +34,12 @@ export class Property {
     })
     tags: Tags[]
 
+    @ManyToMany(type => Review)
+    @JoinTable({
+        name: 'property_review',
+        joinColumns: [{ name: 'review_id' }],
+        inverseJoinColumns: [{ name: 'review_id' }],
+    })
+    review: Review[]
 
 }
