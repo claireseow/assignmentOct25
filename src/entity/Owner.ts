@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+
 
 @Entity()
 export class Owner {
@@ -21,5 +22,4 @@ export class Owner {
     @Column()
     updated_at: Date;
         
-
-}
+ }
